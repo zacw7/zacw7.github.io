@@ -1,6 +1,22 @@
 (function () {
   "use strict";
 
+  // add back button to project details page
+  const projectDetailsElement = document.getElementById(
+    "project-detail-content"
+  );
+  if (projectDetailsElement) {
+    const backLink = document.createElement("a");
+    backLink.innerHTML = "Back"; // Insert text
+    const hrefAttr = document.createAttribute("href");
+    hrefAttr.value = "index.html";
+    const classAttr = document.createAttribute("class");
+    classAttr.value = "btn btn-primary";
+    backLink.setAttributeNode(hrefAttr);
+    backLink.setAttributeNode(classAttr);
+    projectDetailsElement.appendChild(backLink);
+  }
+
   // eslint-disable-next-line valid-jsdoc
   /**
    * Easy selector helper function
